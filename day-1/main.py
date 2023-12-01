@@ -16,6 +16,7 @@ def calculate_calibration(text):
 
 
 def replace_text_numbers_in_stream(text):
+    # handle overlapping e.g. oneight = 18, but there is only one letter overlap 
     number_mapping = {
         'one': 'o1e',
         'two': 't2o',
@@ -48,6 +49,7 @@ def main():
             calibration.append( result )
     
     print(f"Part 1: Sum of all values is: {sum(calibration)}")
+    
     calibration.clear()
     for line in raw_input.split('\n'):
         update = replace_text_numbers_in_stream(line)
