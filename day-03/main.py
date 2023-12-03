@@ -55,8 +55,6 @@ def main():
         x.clear()
         y += 1
 
-
-    
     sigNum = []
     for y in range(0,len(significantCharacters)):
         for _, x in significantCharacters[y]:
