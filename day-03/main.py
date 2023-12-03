@@ -69,9 +69,9 @@ def main():
     for y in range(0,len(significantCharacters)):
         for _, x in significantCharacters[y]:
            if _ == '*':
-            temp = getNeighbours(numbers, x, y)
-            if len(temp) == 2:
-                ratios.append( temp[0] * temp[1] )
+                temp = getNeighbours(numbers, x, y)
+                if len(temp) == 2:
+                    ratios.append( temp[0] * temp[1] )
 
     print(f"Part 2: Sum of the ratios of the pairs is {sum(ratios)}")
 
