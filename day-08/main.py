@@ -1,5 +1,8 @@
 #!/bin/python
 import re
+from itertools import cycle
+from math import lcm
+
 
 def main():
     '''
@@ -29,7 +32,22 @@ def main():
         instruction += 1
         
     print(f"Part 1: Number of steps is: {instruction}")
-        
+    
+    starts = [s for s in myMap.keys() if s.endswith('A')]
+    steps = []
+    for location in starts:
+        for step, direction in enumerate(cycle(directions)):
+            if location.endswith("Z"):
+                steps.append(step)
+                break
+            
+            if direction == 'L':
+                location = myMap[location][0]
+            else:
+                location = myMap[location][1]
+                
+    print(f"Part 2: Ghost steps is {lcm(*steps)}")
+    
     print("End of line")
         
 if __name__ == "__main__":
